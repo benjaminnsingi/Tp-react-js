@@ -5,18 +5,14 @@ import HomePage from "./pages/HomePage";
 import ChroniquesPage from "./pages/ChroniquesPage";
 import AboutPage from "./pages/AboutPage";
 import ProfilePage from "./pages/ProfilePage";
+import NavBar from "./components/navbar/NavBar";
 
 function App() {
 
   return (
     <div className="App">
        <Router>
-           <div className="navbar">
-               <Link to="/">Chroflix</Link>
-               <Link to="/chroniques">Chroniques</Link>
-               <Link to="/about">A propos</Link>
-               <Link to="/profil">Profil</Link>
-           </div>
+           <NavBar/>
 
            <div className="container">
                <Routes>
@@ -28,6 +24,7 @@ function App() {
                    </Fragment>
                </Routes>
            </div>
+
        </Router>
     </div>
   )
