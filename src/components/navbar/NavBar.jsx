@@ -9,6 +9,7 @@ const NavBar = () => {
             <Link to="/chroniques">Chroniques</Link>
             <Link to="/about">A propos</Link>
             <Link to="/profil">Profil</Link>
+            <Link to="/ajout">Ajout d'un chronique</Link>
         </div>
     )
 }
