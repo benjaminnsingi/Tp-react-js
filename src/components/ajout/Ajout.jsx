@@ -8,6 +8,11 @@ const Ajout = () => {
     const [inputDescription, setInputDescription] = useState("");
     const [inputGender, setInputGender] = useState("");
 
+    const [resultTitle, setResultTitle ] = useState();
+    const [resultAuthor, setResultAuthor ] = useState();
+    const [resultGender, setResultGender ] = useState();
+    const [resultDescription, setResultDescription ] = useState();
+
     const options = [
         {
         label: "Aventure",
@@ -24,6 +29,12 @@ const Ajout = () => {
     ];
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        setResultTitle(inputTitle)
+        setResultAuthor(inputAuthor)
+        setResultGender(inputGender)
+        setResultDescription(inputDescription)
+
         setInputTitle("");
         setInputAuthor("");
         setInputGender("")
@@ -35,10 +46,10 @@ const Ajout = () => {
     return (
         <div className="container">
             <h1>Ajout de chronique</h1>
-            <p>Titre: {inputTitle}</p>
-            <p>Auteur: {inputAuthor}</p>
-            <p>Genre: {inputGender}</p>
-            <p>Description: {inputDescription}</p>
+            <p>Titre: {resultTitle}</p>
+            <p>Auteur: {resultAuthor}</p>
+            <p>Genre: {resultGender}</p>
+            <p>Description: {resultDescription}</p>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="title" className="form-label">Titre</label>
