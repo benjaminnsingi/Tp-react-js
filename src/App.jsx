@@ -7,8 +7,9 @@ import AboutPage from "./pages/AboutPage";
 import ProfilePage from "./pages/ProfilePage";
 import NavBar from "./components/navbar/NavBar";
 import AddPage from "./pages/AddPage";
+import Display from "./components/chroniques/Display";
 
-function App() {
+function App({index}) {
 
   return (
     <div className="App">
@@ -22,6 +23,7 @@ function App() {
                        <Route path="/about" element={<AboutPage/>} />
                        <Route path="/profil" element={<ProfilePage/>} />
                        <Route path="/ajout" element={<AddPage/>} />
+                       <Route path="/display/:slug"  element={ <Display />} />
                    </Fragment>
                </Routes>
            </div>

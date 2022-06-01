@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState} from "react";
 import "bootstrap/dist/css/bootstrap.css";
 
 const Ajout = () => {
@@ -7,11 +7,6 @@ const Ajout = () => {
     const [inputAuthor, setInputAuthor ] = useState("");
     const [inputDescription, setInputDescription] = useState("");
     const [inputGender, setInputGender] = useState("");
-
-    const [resultTitle, setResultTitle ] = useState();
-    const [resultAuthor, setResultAuthor ] = useState();
-    const [resultGender, setResultGender ] = useState();
-    const [resultDescription, setResultDescription ] = useState();
 
     const options = [
         {
@@ -29,27 +24,36 @@ const Ajout = () => {
     ];
     const handleSubmit = (e) => {
         e.preventDefault();
+        const chronique = {
+            title: inputTitle,
+            author: inputAuthor,
+            gender: inputGender,
+            content: inputDescription
+        }
 
-        setResultTitle(inputTitle)
-        setResultAuthor(inputAuthor)
-        setResultGender(inputGender)
-        setResultDescription(inputDescription)
+        fetch('http://localhost:3001/chroniques',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(chronique)
 
-        setInputTitle("");
-        setInputAuthor("");
-        setInputGender("")
-        setInputDescription("");
+            })
+            .then(response => {
+                console.log(response)
+                setInputTitle("");
+                setInputAuthor("");
+                setInputGender("")
+                setInputDescription("");
+            })
 
-        console.log(e)
+        //console.log(e)
     }
 
     return (
         <div className="container">
             <h1>Ajout de chronique</h1>
-            <p>Titre: {resultTitle}</p>
-            <p>Auteur: {resultAuthor}</p>
-            <p>Genre: {resultGender}</p>
-            <p>Description: {resultDescription}</p>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="title" className="form-label">Titre</label>
@@ -61,8 +65,8 @@ const Ajout = () => {
                 </div>
                 <div className="mb-3">
                     <select className="form-select" aria-label="Genre" onChange={e => setInputGender(e.target.value)}>
-                        {options.map((option) => (
-                            <option value={option.value}>{option.label}</option>
+                        {options.map((option,index) => (
+                            <option key={index} value={option.value}>{option.label}</option>
                         ))}
                     </select>
                 </div>
