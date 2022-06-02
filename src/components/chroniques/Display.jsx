@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
+import img1 from "../../images/img2.jpg";
 
-const Display = ({title, author, gender, content, index}) => {
+const Display = () => {
 
      const {slug} = useParams();
     const [posts, setPosts] = useState([])
@@ -16,13 +17,21 @@ const Display = ({title, author, gender, content, index}) => {
 
 
     return (
-        <div className="display__post">
-            <ul className="chronique__content">
-                <li>{posts.title}</li>
-                <li>{posts.author}</li>
-                <li>{posts.gender}</li>
-                <li>{posts.content}</li>
-            </ul>
+
+
+        <div className="d-flex justify-content-center m-5">
+           <div className="col-8">
+               <div className="card shadow-sm">
+                   <img src={img1}/>
+                   <div className="card-body">
+                       <h4>{posts.title}</h4>
+                       <p>{posts.author}</p>
+                       <p>{posts.gender}</p>
+                       <p className="card-text">{posts.content}</p>
+                   </div>
+               </div>
+           </div>
+
         </div>
     )
 }

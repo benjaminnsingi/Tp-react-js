@@ -25,7 +25,7 @@ const Chroniques = () => {
 
 
     return (
-            <div>
+            <div className="row">
                 <h1>Chroniques</h1>
                 {
                     posts.map(

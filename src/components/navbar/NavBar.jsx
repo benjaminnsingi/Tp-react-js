@@ -10,6 +10,8 @@ const NavBar = () => {
             <Link to="/about">A propos</Link>
             <Link to="/profil">Profil</Link>
             <Link to="/ajout">Ajout d'un chronique</Link>
+            <Link to="/register">Inscription</Link>
+            <Link to="/login">Se connecter</Link>
         </div>
     )
 }

@@ -955,6 +955,13 @@ etag@~1.8.1:
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
   integrity sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==
 
+express-ie-cors@^0.9.4:
+  version "0.9.4"
+  resolved "https://registry.yarnpkg.com/express-ie-cors/-/express-ie-cors-0.9.4.tgz#b9895e0290cbf68baf09ebbade89762d8faa784d"
+  integrity sha512-TN9RSTpOJ8mHS5lfKbkQAIZ+EUDRq+a14Ns2fd5uEZ4yI+RB3wbjYoSrU9aYH/S3TfdXMgvEsFAjpic/qeVX9A==
+  dependencies:
+    useragent "2.0.0"
+
 express-urlrewrite@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/express-urlrewrite/-/express-urlrewrite-1.4.0.tgz#985ee022773bac7ed32126f1cf9ec8ee48e1290a"
@@ -1737,7 +1744,7 @@ react-router-dom@^6.3.0:
     history "^5.2.0"
     react-router "6.3.0"
 
-react-router@6.3.0:
+react-router@6.3.0, react-router@^6.3.0:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/react-router/-/react-router-6.3.0.tgz#3970cc64b4cb4eae0c1ea5203a80334fdd175557"
   integrity sha512-7Wh1DzVQ+tlFjkeo+ujvjSqSJmkt1+8JO+T5xklPlgrh70y7ogx75ODRW0ThWhY7S+6yEDks8TYrtQe/aoboBQ==
@@ -2047,6 +2054,11 @@ url-parse-lax@^3.0.0:
   integrity sha1-FrXK/Afb42dsGxmZF3gj1lA6yww=
   dependencies:
     prepend-http "^2.0.0"
+
+useragent@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/useragent/-/useragent-2.0.0.tgz#4bcfad92f883e51ee1431be76309ef3bb2846917"
+  integrity sha1-S8+tkviD5R7hQxvnYwnvO7KEaRc=
 
 utils-merge@1.0.1:
   version "1.0.1"
