@@ -1,9 +1,11 @@
 import React from "react";
-import Edite from "../components/edit/Edite";
+import Edit from "../components/edit/Edit";
 
 
 const EditPage = () => {
-      <Edite/>
+     return (
+         <Edit/>
+     )
 }
 
 

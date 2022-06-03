@@ -24,7 +24,7 @@ function App() {
                         <Route path="/about" element={<AboutPage/>} />
                         <Route path="/display/:slug"  element={ <Display />} />
                         <Route path="/ajout" element={<PrivateRoute component={AddPage}/>} />
-                        <Route path="/edit/:slug" element={<EditPage/>} />
+                        <Route path="/edit/:slug" element={<PrivateRoute component={EditPage}/>} />
                         <Route path="/profil" element={<PrivateRoute component={ProfilePage}/>} />
                     </Routes>
                 </div>
