@@ -4,7 +4,7 @@ import img1 from "../../images/img2.jpg";
 
 const Display = () => {
 
-     const {slug} = useParams();
+    const {slug} = useParams();
     const [posts, setPosts] = useState([])
 
     useEffect(()=> {

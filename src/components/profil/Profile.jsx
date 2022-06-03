@@ -3,8 +3,8 @@ import "bootstrap/dist/css/bootstrap.css";
 import {useAuth0} from "@auth0/auth0-react";
 const Profile = () => {
 
-   const {user, logout,isAuthenticated} = useAuth0();
-
+   const {user,isAuthenticated} = useAuth0();
+   console.log(user);
 
     return (
        isAuthenticated && (
@@ -14,9 +14,7 @@ const Profile = () => {
                    <div className="col-lg-4">
                        {user ?.picture && <img src={user.picture} alt={user?.name}/>}
                        <h2 className="text-center">Bonjour {user?.name}</h2>
-                       <button className="btn btn-primary" onClick={() => logout()}>
-                           Deconnexion
-                       </button>
+                       <p>{user.email}</p>
                    </div>
 
                </div>

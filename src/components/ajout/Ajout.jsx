@@ -1,13 +1,14 @@
 import React, { useState} from "react";
 import "bootstrap/dist/css/bootstrap.css";
+import FlashMessage from "react-flash-message";
 
 const Ajout = () => {
-
 
     const [inputTitle, setInputTitle ] = useState("");
     const [inputAuthor, setInputAuthor ] = useState("");
     const [inputDescription, setInputDescription] = useState("");
     const [inputGender, setInputGender] = useState("");
+    const [status, setStatus] = useState(false);
 
     const options = [
         {
@@ -22,9 +23,27 @@ const Ajout = () => {
             label: "Comedie",
             value: "Comedie",
         },
+        {
+            label: "Science-fiction",
+            value: "Science-fiction",
+        },
+        {
+            label: "Fantastique",
+            value: "Fantastique",
+        },
+        {
+            label: "Horreur",
+            value: "Horreur",
+        },
+        {
+            label: "Animation",
+            value: "Animation",
+        },
     ];
     const handleSubmit = (e) => {
         e.preventDefault();
+        setStatus(true)
+
         const chronique = {
             title: inputTitle,
             author: inputAuthor,
@@ -56,6 +75,11 @@ const Ajout = () => {
         <div className="container">
             <h1>Ajout de chronique</h1>
             <form onSubmit={handleSubmit}>
+                {status && (
+                    <FlashMessage duration={5000}>
+                        <div className="alert alert-success">Votre poste a bien été ajouté</div>
+                    </FlashMessage>
+                )}
                 <div className="mb-3">
                     <label htmlFor="title" className="form-label">Titre</label>
                     <input type="text" className="form-control" onChange={e => setInputTitle(e.target.value)} value={inputTitle}/>
